@@ -267,7 +267,7 @@ func (f *Fhs) processCertificate(qc *blockchain.QC) {
 	}
 	if qc.Leader != f.ID() {
 		quorumIsVerified, _ := crypto.VerifyQuorumSignature(qc.AggSig, qc.BlockID, qc.Signers)
-		if quorumIsVerified == false {
+		if !quorumIsVerified {
 			log.Warningf("[%v] received a quorum with invalid signatures", f.ID())
 			return
 		}
