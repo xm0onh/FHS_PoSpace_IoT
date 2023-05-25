@@ -2,8 +2,11 @@ package fhs
 
 import (
 	"fmt"
+	"math"
+	"math/rand"
 	"sync"
 
+	"github.com/gitferry/bamboo/PoSpace"
 	"github.com/gitferry/bamboo/blockchain"
 	"github.com/gitferry/bamboo/config"
 	"github.com/gitferry/bamboo/crypto"
@@ -122,13 +125,37 @@ func (f *Fhs) ProcessBlock(block *blockchain.Block) error {
 	vote := blockchain.MakeVote(block.View, f.ID(), block.ID)
 	// vote to the next leader
 
-	voteAggregator := f.FindLeaderFor(block.View + 1)
-	log.Debugf("Choosing new leader for view: %v", block.View+1)
-	if voteAggregator == f.ID() {
-		f.ProcessVote(vote)
-	} else {
-		f.Send(voteAggregator, vote)
+	// PoSpace
+	var wg sync.WaitGroup
+	for {
+		voteAggregator := f.FindLeaderFor(block.View + 1)
+		k := int(math.Pow(2, 10))
+		test := PoSpace.ToBinary(int(voteAggregator.Node()), k)
+		key := test + PoSpace.ToBinary(rand.Intn(k), k)
+		hash := PoSpace.HashSHA256(key)
+		space := ""
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			space = PoSpace.Challenge(int(voteAggregator.Node()), hash)
+
+		}()
+		wg.Wait()
+		if space == key {
+			log.Debugf("PoSpace is Successfuly passed for node: [%v]", voteAggregator.Node())
+			// fmt.Println("time elapsed -->", time.Since(nowTime))
+			fmt.Println(key)
+			log.Debugf("Choosing new leader for view: %v", block.View+1)
+			if voteAggregator == f.ID() {
+				f.ProcessVote(vote)
+				break
+			} else {
+				f.Send(voteAggregator, vote)
+				break
+			}
+		}
 	}
+
 	log.Debugf("[%v] vote is sent, id: %x", f.ID(), vote.BlockID)
 
 	b, ok := f.bufferedBlocks[block.View]

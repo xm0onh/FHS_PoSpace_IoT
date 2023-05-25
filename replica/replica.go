@@ -82,9 +82,9 @@ func NewReplica(id identity.NodeID, alg string, isByz bool) *Replica {
 		wg.Wait()
 		close(r.PoSpace.Test)
 	}()
-	// for res := range r.PoSpace.Test {
-	// 	fmt.Println()
-	// }
+	for res := range r.PoSpace.Test {
+		fmt.Println(res)
+	}
 	if isByz {
 		log.Infof("[%v] is Byzantine", r.ID())
 	}
