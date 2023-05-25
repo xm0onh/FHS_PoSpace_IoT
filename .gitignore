@@ -32,7 +32,7 @@ server/server
 
 bin/client
 bin/server
-bin/*.txt
+/bin/*.txt
 
 bin/deploy/client
 bin/deploy/server
