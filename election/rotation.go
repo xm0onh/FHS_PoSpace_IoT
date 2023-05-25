@@ -3,6 +3,7 @@ package election
 import (
 	"crypto/sha1"
 	"encoding/binary"
+	"fmt"
 	"math"
 	"math/rand"
 	"strconv"
@@ -40,17 +41,17 @@ func (r *Rotation) IsLeader(id identity.NodeID, view types.View) bool {
 }
 
 func (r *Rotation) FindLeaderFor(view types.View) identity.NodeID {
-	rand.Seed(time.Now().UnixNano()) // Initialize the random number generator.
-
+	// rand.Seed(time.Now().UnixNano()) // Initialize the random number generator.
+	nowTime := time.Now()
 	if view <= 3 {
 		return identity.NewNodeID(r.peerNo)
 	}
-	// h := sha1.New()
-	// h.Write([]byte(strconv.Itoa(int(view + 1))))
-	// bs := h.Sum(nil)
-	// data := binary.BigEndian.Uint64(bs)
-	// // id := data%uint64(r.peerNo) + 1
-	id := rand.Intn(r.peerNo)
+	h := sha1.New()
+	h.Write([]byte(strconv.Itoa(int(view + 1))))
+	bs := h.Sum(nil)
+	data := binary.BigEndian.Uint64(bs)
+	id := data%uint64(r.peerNo) + 1
+	// id := rand.Intn(r.peerNo)
 
 	// PoSpace
 	var wg sync.WaitGroup
@@ -68,8 +69,21 @@ func (r *Rotation) FindLeaderFor(view types.View) identity.NodeID {
 	wg.Wait()
 	if space == key {
 		log.Debugf("PoSpace is Successfuly passed for node: [%v]", id)
+		fmt.Println("time elapsed -->", time.Since(nowTime))
+		return identity.NewNodeID(int(id))
+	} else {
 		return identity.NewNodeID(int(id))
 	}
-	return ""
-
 }
+
+// func (r *Rotation) FindLeaderFor(view types.View) identity.NodeID {
+// 	if view <= 3 {
+// 		return identity.NewNodeID(r.peerNo)
+// 	}
+// 	h := sha1.New()
+// 	h.Write([]byte(strconv.Itoa(int(view + 1))))
+// 	bs := h.Sum(nil)
+// 	data := binary.BigEndian.Uint64(bs)
+// 	id := data%uint64(r.peerNo) + 1
+// 	return identity.NewNodeID(int(id))
+// }
