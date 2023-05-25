@@ -14,7 +14,8 @@ mem_*
 cpu_*
 server.*.log
 client.*.log
-
+*.txt
+bin/*.txt
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
@@ -32,6 +33,7 @@ server/server
 
 bin/client
 bin/server
+
 
 bin/deploy/client
 bin/deploy/server
