@@ -3,12 +3,10 @@ package election
 import (
 	"crypto/sha1"
 	"encoding/binary"
-	"fmt"
 	"math"
 	"math/rand"
 	"strconv"
 	"sync"
-	"time"
 
 	"github.com/gitferry/bamboo/PoSpace"
 	"github.com/gitferry/bamboo/identity"
@@ -42,7 +40,7 @@ func (r *Rotation) IsLeader(id identity.NodeID, view types.View) bool {
 
 func (r *Rotation) FindLeaderFor(view types.View) identity.NodeID {
 	// rand.Seed(time.Now().UnixNano()) // Initialize the random number generator.
-	nowTime := time.Now()
+	// nowTime := time.Now()
 	if view <= 3 {
 		return identity.NewNodeID(r.peerNo)
 	}
@@ -69,7 +67,7 @@ func (r *Rotation) FindLeaderFor(view types.View) identity.NodeID {
 	wg.Wait()
 	if space == key {
 		log.Debugf("PoSpace is Successfuly passed for node: [%v]", id)
-		fmt.Println("time elapsed -->", time.Since(nowTime))
+		// fmt.Println("time elapsed -->", time.Since(nowTime))
 		return identity.NewNodeID(int(id))
 	} else {
 		return identity.NewNodeID(int(id))
