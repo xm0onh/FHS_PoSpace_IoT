@@ -72,13 +72,11 @@ func NewReplica(id identity.NodeID, alg string, isByz bool) *Replica {
 	r.PoSpace.Test = make(chan int)
 	var wg sync.WaitGroup
 	if _, err := os.Stat(dbPath); os.IsNotExist(err) {
-		// fmt.Println("No such file or directory:", dbPath)
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
 			r.PoSpace.New(id)
 		}()
-		// fmt.Println("Proof of Space is generated for node: ", id)
 	}
 	go func() {
 		wg.Wait()
