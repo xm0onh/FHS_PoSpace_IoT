@@ -9,7 +9,6 @@ import (
 	"time"
 
 	fhs "github.com/gitferry/bamboo/fasthostuff"
-	"github.com/gitferry/bamboo/lbft"
 
 	"go.uber.org/atomic"
 
@@ -24,8 +23,6 @@ import (
 	"github.com/gitferry/bamboo/message"
 	"github.com/gitferry/bamboo/node"
 	"github.com/gitferry/bamboo/pacemaker"
-	"github.com/gitferry/bamboo/streamlet"
-	"github.com/gitferry/bamboo/tchs"
 	"github.com/gitferry/bamboo/types"
 )
 
@@ -119,12 +116,6 @@ func NewReplica(id identity.NodeID, alg string, isByz bool) *Replica {
 	switch alg {
 	case "hotstuff":
 		r.Safety = hotstuff.NewHotStuff(r.Node, r.pm, r.Election, r.committedBlocks, r.forkedBlocks)
-	case "tchs":
-		r.Safety = tchs.NewTchs(r.Node, r.pm, r.Election, r.committedBlocks, r.forkedBlocks)
-	case "streamlet":
-		r.Safety = streamlet.NewStreamlet(r.Node, r.pm, r.Election, r.committedBlocks, r.forkedBlocks)
-	case "lbft":
-		r.Safety = lbft.NewLbft(r.Node, r.pm, r.Election, r.committedBlocks, r.forkedBlocks)
 	case "fasthotstuff":
 		r.Safety = fhs.NewFhs(r.Node, r.pm, r.Election, r.committedBlocks, r.forkedBlocks)
 	default:
