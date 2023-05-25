@@ -1,7 +1,7 @@
 package blockchain
 
 import (
-	"github.com/gitferry/bamboo/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
 )
 
 type Vertex interface {

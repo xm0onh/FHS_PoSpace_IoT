@@ -1,7 +1,7 @@
 package encoding
 
 import (
-	"github.com/gitferry/bamboo/types/encoding/json"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types/encoding/json"
 )
 
 // Encoder encodes and decodes values to and from bytes.

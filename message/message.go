@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/db"
-	"github.com/gitferry/bamboo/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/db"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
 )
 
 func init() {

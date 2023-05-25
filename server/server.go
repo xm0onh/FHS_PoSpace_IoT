@@ -5,12 +5,13 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/gitferry/bamboo"
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/crypto"
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/replica"
+	"github.com/xm0onh/FHS_PoSpace_IoT"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/replica"
 )
 
 var algorithm = flag.String("algorithm", "hotstuff", "BFT consensus algorithm")
@@ -28,7 +29,7 @@ func initReplica(id identity.NodeID, isByz bool) {
 }
 
 func main() {
-	bamboo.Init()
+	FHS_PoSpace_IoT.Init()
 	// the private and public keys are generated here
 	errCrypto := crypto.SetKeys()
 	if errCrypto != nil {

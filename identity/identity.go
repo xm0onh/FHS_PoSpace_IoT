@@ -3,7 +3,7 @@ package identity
 import (
 	"strconv"
 
-	"github.com/gitferry/bamboo/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
 )
 
 // NodeID represents a generic identifier in format of Zone.Node

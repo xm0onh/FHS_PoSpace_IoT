@@ -7,8 +7,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
 )
 
 // SigningAlgorithm is an identifier for a signing algorithm and curve.

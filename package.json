@@ -1,7 +1,7 @@
 {
-  "name": "bamboo",
+  "name": "FHS_PoSpace_IoT",
   "version": "1.0.0",
-  "description": "**Bamboo** is a prototyping and evaluation framework that studies the next generation BFT (Byzantine fault-tolerant) protocols specific for blockchains, namely chained-BFT, or cBFT. By leveraging Bamboo, developers can prototype a brand new cBFT protocol in around 300 LoC and evaluate using rich benchmark facilities.",
+  "description": "**FHS_PoSpace_IoT** is a prototyping and evaluation framework that studies the next generation BFT (Byzantine fault-tolerant) protocols specific for blockchains, namely chained-BFT, or cBFT. By leveraging FHS_PoSpace_IoT, developers can prototype a brand new cBFT protocol in around 300 LoC and evaluate using rich benchmark facilities.",
   "main": "index.js",
   "directories": {
     "doc": "doc"
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Grivn/bamboo.git"
+    "url": "git+https://github.com/xm0onh/FHS_PoSpace_IoT.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Grivn/bamboo/issues"
+    "url": "https://github.com/xm0onh/FHS_PoSpace_IoT/issues"
   },
-  "homepage": "https://github.com/Grivn/bamboo#readme",
+  "homepage": "https://github.com/xm0onh/FHS_PoSpace_IoT#readme",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

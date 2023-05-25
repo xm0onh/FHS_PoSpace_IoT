@@ -3,10 +3,10 @@ package blockchain
 import (
 	"time"
 
-	"github.com/gitferry/bamboo/crypto"
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/message"
-	"github.com/gitferry/bamboo/types"
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types"
 )
 
 type Block struct {

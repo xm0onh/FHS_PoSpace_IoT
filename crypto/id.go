@@ -1,7 +1,7 @@
 package crypto
 
 import (
-	"github.com/gitferry/bamboo/types/encoding"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types/encoding"
 )
 
 type Identifier [32]byte

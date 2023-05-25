@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/transport"
-	"github.com/gitferry/bamboo/utils"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/transport"
+	"github.com/xm0onh/FHS_PoSpace_IoT/utils"
 )
 
 // Socket integrates all networking interface and fault injections

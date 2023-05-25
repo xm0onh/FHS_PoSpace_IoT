@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/gitferry/bamboo/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
 )
 
 type PoSpace struct {

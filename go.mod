@@ -1,4 +1,4 @@
-module github.com/gitferry/bamboo
+module github.com/xm0onh/FHS_PoSpace_IoT
 
 go 1.14
 

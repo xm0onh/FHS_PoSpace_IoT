@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
 )
 
 // Key type of the key-value database

@@ -9,13 +9,13 @@ import (
 	"strconv"
 	"time"
 
-	//"github.com/gitferry/bamboo/crypto"
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/transport"
+	//"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/transport"
 )
 
-var configFile = flag.String("config", "config.json", "Configuration file for bamboo replica. Defaults to config.json.")
+var configFile = flag.String("config", "config.json", "Configuration file for FHS_PoSpace_IoT replica. Defaults to config.json.")
 
 // Config contains every system configuration
 type Config struct {

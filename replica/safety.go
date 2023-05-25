@@ -1,10 +1,10 @@
 package replica
 
 import (
-	"github.com/gitferry/bamboo/blockchain"
-	"github.com/gitferry/bamboo/message"
-	"github.com/gitferry/bamboo/pacemaker"
-	"github.com/gitferry/bamboo/types"
+	"github.com/xm0onh/FHS_PoSpace_IoT/blockchain"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
+	"github.com/xm0onh/FHS_PoSpace_IoT/pacemaker"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types"
 )
 
 type Safety interface {

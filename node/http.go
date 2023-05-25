@@ -1,9 +1,6 @@
 package node
 
 import (
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/message"
 	"io"
 	"io/ioutil"
 	"math/rand"
@@ -11,6 +8,10 @@ import (
 	"net/url"
 	"sync"
 	"time"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
 )
 
 // http request header names

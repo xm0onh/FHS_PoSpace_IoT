@@ -1,11 +1,12 @@
 package pacemaker
 
 import (
-	"github.com/gitferry/bamboo/config"
 	"sync"
 	"time"
 
-	"github.com/gitferry/bamboo/types"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/types"
 )
 
 type Pacemaker struct {

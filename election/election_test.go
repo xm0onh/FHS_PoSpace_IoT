@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/gitferry/bamboo/types"
 	"github.com/stretchr/testify/require"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types"
 )
 
 func TestRotation_IsLeader(t *testing.T) {

@@ -1,6 +1,6 @@
 package blockchain
 
-import "github.com/gitferry/bamboo/crypto"
+import "github.com/xm0onh/FHS_PoSpace_IoT/crypto"
 
 // BlockContainer wraps a block to implement forest.Vertex
 // In addition, it holds some additional properties for efficient processing of blocks

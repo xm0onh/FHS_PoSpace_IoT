@@ -8,11 +8,11 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/crypto"
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/message"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
 )
 
 func FindIntSlice(slice []int, val int) bool {

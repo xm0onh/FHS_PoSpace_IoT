@@ -5,11 +5,11 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/identity"
-	"github.com/gitferry/bamboo/log"
-	"github.com/gitferry/bamboo/message"
-	"github.com/gitferry/bamboo/socket"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/identity"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
+	"github.com/xm0onh/FHS_PoSpace_IoT/socket"
 )
 
 // Node is the primary access point for every replica
@@ -112,7 +112,7 @@ func (n *node) txn() {
 	}
 }
 
-//recv receives messages from socket and pass to message channel
+// recv receives messages from socket and pass to message channel
 func (n *node) recv() {
 	for {
 		m := n.Recv()

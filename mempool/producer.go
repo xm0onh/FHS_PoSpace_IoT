@@ -1,8 +1,8 @@
 package mempool
 
 import (
-	"github.com/gitferry/bamboo/config"
-	"github.com/gitferry/bamboo/message"
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
+	"github.com/xm0onh/FHS_PoSpace_IoT/message"
 )
 
 type Producer struct {

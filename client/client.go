@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.com/gitferry/bamboo"
-	"github.com/gitferry/bamboo/benchmark"
-	"github.com/gitferry/bamboo/db"
+	"github.com/xm0onh/FHS_PoSpace_IoT"
+	"github.com/xm0onh/FHS_PoSpace_IoT/benchmark"
+	"github.com/xm0onh/FHS_PoSpace_IoT/db"
 )
 
-// Database implements bamboo.DB interface for benchmarking
+// Database implements FHS_PoSpace_IoT.DB interface for benchmarking
 type Database struct {
-	bamboo.Client
+	FHS_PoSpace_IoT.Client
 }
 
 func (d *Database) Init() error {
@@ -26,10 +26,10 @@ func (d *Database) Write(k int, v []byte) error {
 }
 
 func main() {
-	bamboo.Init()
+	FHS_PoSpace_IoT.Init()
 
 	d := new(Database)
-	d.Client = bamboo.NewHTTPClient()
+	d.Client = FHS_PoSpace_IoT.NewHTTPClient()
 	b := benchmark.NewBenchmark(d)
 	b.Run()
 }

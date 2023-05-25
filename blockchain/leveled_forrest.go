@@ -2,9 +2,10 @@ package blockchain
 
 import (
 	"fmt"
-	"github.com/gitferry/bamboo/log"
 
-	"github.com/gitferry/bamboo/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/log"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
 )
 
 // LevelledForest contains multiple trees (which is a potentially disconnected planar graph).
@@ -24,12 +25,12 @@ type VertexList []*vertexContainer
 type VertexSet map[crypto.Identifier]*vertexContainer
 
 // vertexContainer holds information about a tree vertex. Internally, we distinguish between
-// * FULL container: has non-nil value for vertex.
-//   Used for vertices, which have been added to the tree.
-// * EMPTY container: has NIL value for vertex.
-//   Used for vertices, which have NOT been added to the tree, but are
-//   referenced by vertices in the tree. An empty container is converted to a
-//   full container when the respective vertex is added to the tree
+//   - FULL container: has non-nil value for vertex.
+//     Used for vertices, which have been added to the tree.
+//   - EMPTY container: has NIL value for vertex.
+//     Used for vertices, which have NOT been added to the tree, but are
+//     referenced by vertices in the tree. An empty container is converted to a
+//     full container when the respective vertex is added to the tree
 type vertexContainer struct {
 	id       crypto.Identifier
 	level    uint64

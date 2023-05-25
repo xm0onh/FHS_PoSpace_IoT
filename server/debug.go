@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/gitferry/bamboo/config"
 	"net/http"
 	_ "net/http/pprof"
 	"os"
 	"runtime/pprof"
 	"time"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/config"
 )
 
 // Debug related config keys

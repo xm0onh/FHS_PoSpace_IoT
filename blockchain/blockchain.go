@@ -2,8 +2,9 @@ package blockchain
 
 import (
 	"fmt"
-	"github.com/gitferry/bamboo/crypto"
-	"github.com/gitferry/bamboo/types"
+
+	"github.com/xm0onh/FHS_PoSpace_IoT/crypto"
+	"github.com/xm0onh/FHS_PoSpace_IoT/types"
 )
 
 type BlockChain struct {

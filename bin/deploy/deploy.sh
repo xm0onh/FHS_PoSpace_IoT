@@ -15,9 +15,9 @@ distribute(){
     SERVER_ADDR=(`cat public_ips.txt`)
     for (( j=1; j<=$1; j++))
     do 
-       ssh -t $2@${SERVER_ADDR[j-1]} mkdir bamboo
+       ssh -t $2@${SERVER_ADDR[j-1]} mkdir FHS_PoSpace_IoT
        echo -e "---- upload replica ${j}: $2@${SERVER_ADDR[j-1]} \n ----"
-       scp server ips.txt $2@${SERVER_ADDR[j-1]}:/root/bamboo
+       scp server ips.txt $2@${SERVER_ADDR[j-1]}:/root/FHS_PoSpace_IoT
     done
 }
 
